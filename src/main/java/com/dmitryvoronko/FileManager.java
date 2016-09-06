@@ -12,15 +12,31 @@ import java.util.stream.Collectors;
  */
 public class FileManager {
 
-    public static long getLinesCount(String filePath) throws IOException {
-        return Files.lines(Paths.get(filePath)).count();
+    public static long getLinesCount(String filePath) {
+        long result = 0;
+        try {
+            result = Files.lines(Paths.get(filePath)).count();
+        } catch (IOException e) {
+            System.out.println("Невозможно посчитать количесво строк в файле.");
+        }
+        return result;
     }
 
-    public static List<String> readFile(String filePath) throws IOException {
-         return Files.lines(Paths.get(filePath), StandardCharsets.ISO_8859_1).collect(Collectors.toList());
+    public static List<String> readFile(String filePath) {
+        List<String> result = null;
+        try {
+            result = Files.lines(Paths.get(filePath), StandardCharsets.ISO_8859_1).collect(Collectors.toList());
+        } catch (IOException e) {
+            System.out.println("Невозможно прочитать файл.");
+        }
+        return result;
     }
 
-    public static void writeFile(String filePath, List<String> lines) throws IOException {
-        Files.write(Paths.get(filePath), lines);
+    public static void writeFile(String filePath, List<String> lines) {
+        try {
+            Files.write(Paths.get(filePath), lines);
+        } catch (IOException e) {
+            System.out.println("Невозможно записать файл.");
+        }
     }
 }

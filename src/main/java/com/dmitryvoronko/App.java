@@ -103,7 +103,7 @@ public class App {
         }
     }
 
-    private void writeFile(List list, String[] lines, String outputFile) {
+    private void writeFile(List list, String[] lines, String outputFile) throws IOException {
         list = new ArrayList<String>();
 
         for (int i = 0; i <lines.length; i++) {
