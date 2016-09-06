@@ -15,14 +15,14 @@ public abstract class InsertionSort {
             allocateTemp();
             in = out;
             while (isReady()) {
-                swap();
+                arrayShift();
                 --in;
             }
             returnTemp();
         }
     }
 
-    protected abstract void swap();
+    protected abstract void arrayShift();
 
     protected abstract void allocateTemp();
 

@@ -28,7 +28,7 @@ public final class NumbersInsertionSort extends InsertionSort {
                         : numbers[in - 1] <= temp);
     }
 
-    protected void swap() {
+    protected void arrayShift() {
         numbers[in] = numbers[in - 1];
     }
 }

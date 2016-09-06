@@ -27,7 +27,7 @@ public final class LinesInsertionSort extends InsertionSort {
                 : (lines[in - 1].compareTo(temp) < 0));
     }
 
-    protected void swap() {
+    protected void arrayShift() {
         lines[in] = lines[in - 1];
     }
 }
