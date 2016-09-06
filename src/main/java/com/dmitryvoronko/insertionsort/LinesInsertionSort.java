@@ -1,11 +1,11 @@
-package com.dmitryvoronko;
+package com.dmitryvoronko.insertionsort;
 
 /**
  * Created by Dmitry on 06/09/2016.
  */
-public class LinesInsertionSort extends InsertionSort {
+public final class LinesInsertionSort extends InsertionSort {
 
-    private String[] lines;
+    private final String[] lines;
     private String temp;
 
     public LinesInsertionSort(String[] lines) {
@@ -13,11 +13,11 @@ public class LinesInsertionSort extends InsertionSort {
         count = lines.length;
     }
 
-    public void allocateTemp() {
+    protected void allocateTemp() {
         temp = lines[out];
     }
 
-    public void returnTemp() {
+    protected void returnTemp() {
         lines[in] = temp;
     }
 

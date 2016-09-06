@@ -1,11 +1,11 @@
-package com.dmitryvoronko;
+package com.dmitryvoronko.insertionsort;
 
 /**
  * Created by Dmitry on 06/09/2016.
  */
-public class NumbersInsertionSort extends InsertionSort {
+public final class NumbersInsertionSort extends InsertionSort {
 
-    private long[] numbers;
+    private final long[] numbers;
     private long temp;
 
     public NumbersInsertionSort(long[] numbers) {
@@ -13,19 +13,19 @@ public class NumbersInsertionSort extends InsertionSort {
         count = numbers.length;
     }
 
-    public void allocateTemp() {
+    protected void allocateTemp() {
         long temp = numbers[out];
     }
 
-    public void returnTemp() {
+    protected void returnTemp() {
         numbers[in] = temp;
     }
 
     protected boolean isReady() {
         return in > 0 &&
-                        isAscending ?
+                (isAscending ?
                         numbers[in - 1] >= temp
-                        : numbers[in - 1] <= temp;
+                        : numbers[in - 1] <= temp);
     }
 
     protected void swap() {

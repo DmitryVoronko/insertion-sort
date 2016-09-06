@@ -1,6 +1,11 @@
 package com.dmitryvoronko;
 
+import com.dmitryvoronko.insertionsort.InsertionSort;
+import com.dmitryvoronko.insertionsort.LinesInsertionSort;
+import com.dmitryvoronko.insertionsort.NumbersInsertionSort;
+
 import java.io.*;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -45,9 +50,7 @@ public class App {
                 System.out.println(lines[i]);
             }
             
-//            list = new ArrayList<String>();
-//
-//            FileManager.writeFile(outputFile, list);
+
         } else {
             exitWithMessage(INCORRECT_ARGUMENTS);
         }
@@ -98,6 +101,16 @@ public class App {
         if (FileManager.getLinesCount(filePath) > MAX_SIZE) {
             exitWithMessage("Превышено допустимое количество строк в файле. Строк больше " + MAX_SIZE + "!");
         }
+    }
+
+    private void writeFile(List list, String[] lines, String outputFile) {
+        list = new ArrayList<String>();
+
+        for (int i = 0; i <lines.length; i++) {
+            list.add(lines[i]);
+        }
+
+        FileManager.writeFile(outputFile, list);
     }
 
 }

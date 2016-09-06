@@ -1,4 +1,4 @@
-package com.dmitryvoronko;
+package com.dmitryvoronko.insertionsort;
 
 /**
  * Created by Dmitry on 06/09/2016.
