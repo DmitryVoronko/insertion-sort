@@ -23,8 +23,8 @@ public class LinesInsertionSort extends InsertionSort {
 
     protected boolean isReady() {
         return in > 0 &&
-                isAscending ? lines[in - 1].compareTo(temp) > 0
-                : lines[in - 1].compareTo(temp) < 0;
+                (isAscending ? (lines[in - 1].compareTo(temp) > 0)
+                : (lines[in - 1].compareTo(temp) < 0));
     }
 
     protected void swap() {

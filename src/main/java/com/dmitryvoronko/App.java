@@ -14,7 +14,7 @@ public class App {
     public static void main(String[] args) throws IOException {
         App app = new App();
         String[] arguments;
-        arguments = new String[]{"C:\\Users\\Dmitry\\Documents\\NetBeansProjects\\insertion-sort\\in.txt", "out.txt", "-s", "-d"};
+        arguments = new String[]{"C:\\Users\\Dmitry\\Documents\\NetBeansProjects\\insertion-sort\\in.txt", "out.txt", "-s", "-a"};
         app.start(arguments);
     }
 
