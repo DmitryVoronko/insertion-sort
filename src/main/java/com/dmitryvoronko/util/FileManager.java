@@ -1,9 +1,10 @@
-package com.dmitryvoronko;
+package com.dmitryvoronko.util;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -32,11 +33,23 @@ public class FileManager {
         return result;
     }
 
-    public static void writeFile(String filePath, List<String> lines) {
+    private static void writeFile(String filePath, List<String> lines) {
         try {
             Files.write(Paths.get(filePath), lines);
         } catch (IOException e) {
             System.out.println("Невозможно записать файл.");
         }
     }
+
+    public static void writeLinesToFile(List<String> lines, String outputFile) {
+        List list = new ArrayList<String>();
+
+        for (int i = 0; i < lines.size(); i++) {
+            list.add(lines.get(i));
+        }
+
+        FileManager.writeFile(outputFile, list);
+    }
+
+
 }
