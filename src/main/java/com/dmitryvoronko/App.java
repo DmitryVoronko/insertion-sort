@@ -1,6 +1,8 @@
 package com.dmitryvoronko;
 
+import com.dmitryvoronko.sort.BubbleSort;
 import com.dmitryvoronko.sort.InsertionSort;
+import com.dmitryvoronko.sort.SelectionSort;
 import com.dmitryvoronko.sort.Sort;
 import com.dmitryvoronko.util.FileManager;
 import com.dmitryvoronko.util.ListManager;
@@ -18,7 +20,7 @@ public class App {
     public static void main(String[] args) {
 //        App app = new App();
 //        String[] arguments;
-//        arguments = new String[]{"C:\\Users\\Dmitry\\Documents\\NetBeansProjects\\insertion-sort\\inI.txt", "out.txt", "-i", "-a"};
+//        arguments = new String[]{"C:\\Users\\Dmitry\\Documents\\NetBeansProjects\\insertion-sort\\inS.txt", "out.txt", "-s", "-a"};
 //        app.start(arguments);
         start(args);
     }
@@ -29,13 +31,15 @@ public class App {
             String outputFile = args[1];
             String optionOne = args[2];
             String optionTwo = args[3];
+            String optionThree = args[4];
 
             List<String> lines = FileManager.readFile(inputFile);
             ListManager.removeEmptyStrings(lines);
 
             Comparable[] comparables = getComparables(optionOne, lines);
 
-            Sort sort = new InsertionSort();
+            Sort sort = getSort(optionThree);
+
             sort.sort(comparables);
 
             switch (optionTwo) {
@@ -55,6 +59,25 @@ public class App {
         } else {
             exitWithMessage(INCORRECT_ARGUMENTS);
         }
+    }
+
+    private static Sort getSort(String optionThree) {
+        Sort sort;
+        switch (optionThree) {
+            case "-bubble":
+                sort = new BubbleSort();
+                break;
+            case "-insert":
+                sort = new InsertionSort();
+                break;
+            case "-select":
+                sort = new SelectionSort();
+                break;
+            default:
+                sort = new InsertionSort();
+
+        }
+        return sort;
     }
 
     private static Comparable[] getComparables(String optionOne, List<String> lines) {

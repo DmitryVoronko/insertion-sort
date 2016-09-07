@@ -23,10 +23,12 @@
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
         <module name="insertion-sort" />
+        <module name="sort" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="insertion-sort" target="1.8" />
+      <module name="sort" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

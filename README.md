@@ -20,16 +20,17 @@
 Имя входного, выходного файла, режим сортировки, а так же тип содержимого задаются при
 запуске через аргументы командной строки. Примеры запуска из командной строки для Windows:
 
-insertion-sort.exe in.txt out.txt -i -a (для целых чисел по возрастанию)
+sort.exe in.txt out.txt -i -a -insert (сортировка методом вставки для целых чисел по возрастанию)
 
-insertion-sort.exe in.txt out.txt -i -d (для целых чисел по убыванию)
+sort.exe in.txt out.txt -i -d -select (сортировка методом выбора для целых чисел по убыванию)
 
-insertion-sort.exe in.txt out.txt -s -a (для строк по возрастанию)
+sort.exe in.txt out.txt -s -a -bubble (пузырьковая сортировка для строк по возрастанию)
 
-insertion-sort.exe in.txt out.txt -s -d (для строк по убыванию)
+sort.exe in.txt out.txt -s -d -insert (для строк по убыванию)
 
 
 in.txt - путь + имя входного файла
 out.txt - путь + имя выходного файла
 -i / -s - типы содержимого
 -a / -d - режимы сортировки
+-insert / -select / -bubble - метод сортировкиы

@@ -3,7 +3,7 @@ package com.dmitryvoronko.sort;
 /**
  * Created by Dmitry on 06/09/2016.
  */
-public final class InsertionSort implements Sort {
+public final class InsertionSort extends Sort {
 
     public final void sort(Comparable[] comparables) {
         int in, out;

@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.dmitryvoronko</groupId>
-    <artifactId>insertion-sort</artifactId>
+    <artifactId>sort</artifactId>
     <version>1.0-SNAPSHOT</version>
     <build>
         <plugins>
@@ -57,7 +57,7 @@
                         </goals>
                         <configuration>
                             <headerType>console</headerType>
-                            <outfile>target/insertion-sort.exe</outfile>
+                            <outfile>target/sort.exe</outfile>
                             <jar>target/${project.artifactId}-${project.version}.jar</jar>
                             <dontWrapJar>false</dontWrapJar>
                             <errTitle>Error in launch4j plugin</errTitle>
@@ -78,9 +78,9 @@
                                 <companyName>com.dmitryvoronko</companyName>
                                 <productVersion>1.0.0.0</productVersion>
                                 <txtProductVersion>${project.version}</txtProductVersion>
-                                <productName>insertion-sort</productName>
-                                <internalName>insertion-sort</internalName>
-                                <originalFilename>insertion-sort.exe</originalFilename>
+                                <productName>sort</productName>
+                                <internalName>sort</internalName>
+                                <originalFilename>sort.exe</originalFilename>
                             </versionInfo>
                         </configuration>
                     </execution>
