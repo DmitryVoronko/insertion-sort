@@ -19,6 +19,7 @@ public class FileManager {
             result = Files.lines(Paths.get(filePath), StandardCharsets.ISO_8859_1).collect(Collectors.toList());
         } catch (IOException e) {
             System.out.println("Невозможно прочитать файл.");
+            System.exit(0);
         }
         return result;
     }
@@ -28,6 +29,7 @@ public class FileManager {
             Files.write(Paths.get(filePath), lines);
         } catch (IOException e) {
             System.out.println("Невозможно записать файл.");
+            System.exit(0);
         }
     }
 
