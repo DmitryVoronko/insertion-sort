@@ -13,16 +13,6 @@ import java.util.stream.Collectors;
  */
 public class FileManager {
 
-    public static long getLinesCount(String filePath) {
-        long result = 0;
-        try {
-            result = Files.lines(Paths.get(filePath)).count();
-        } catch (IOException e) {
-            System.out.println("Невозможно посчитать количесво строк в файле.");
-        }
-        return result;
-    }
-
     public static List<String> readFile(String filePath) {
         List<String> result = null;
         try {

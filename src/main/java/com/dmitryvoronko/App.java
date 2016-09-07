@@ -16,11 +16,11 @@ public class App {
     private static final int MAX_SIZE = 100;
 
     public static void main(String[] args) {
-        App app = new App();
-        String[] arguments;
-        arguments = new String[]{"C:\\Users\\Dmitry\\Documents\\NetBeansProjects\\insertion-sort\\inS.txt", "out.txt", "-s", "-a"};
-        app.start(arguments);
-//        start(args);
+//        App app = new App();
+//        String[] arguments;
+//        arguments = new String[]{"C:\\Users\\Dmitry\\Documents\\NetBeansProjects\\insertion-sort\\inI.txt", "out.txt", "-i", "-a"};
+//        app.start(arguments);
+        start(args);
     }
 
     public static void start(String[] args) {
@@ -67,7 +67,9 @@ public class App {
                 break;
             case "-i":
                 for (int i = 0; i < lines.size(); i++) {
-                    comparables[i] = Integer.valueOf(lines.get(i));
+                    String stringWithoutSpaces = lines.get(i).replaceAll(" ", "");
+                    String stringWithoutTabs = stringWithoutSpaces.replaceAll("\t", "");
+                    comparables[i] = Integer.valueOf(stringWithoutTabs);
                 }
                 break;
             default:
@@ -81,8 +83,6 @@ public class App {
         System.out.println(message);
         System.exit(0);
     }
-
-
 
 
 }
