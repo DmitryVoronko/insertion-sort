@@ -8,15 +8,6 @@ import java.util.List;
  */
 public class ListManager {
 
-    public static void removeEmptyStrings(List<String> lines) {
-        for (int i = 0; i < lines.size(); i++) {
-            String temp = lines.get(i);
-            if (temp.trim().length() == 0) {
-                lines.remove(i);
-            }
-        }
-    }
-
     public static void displayList(List<String> lines, boolean ascending) {
         if (ascending) {
             for (int i = 0; i < lines.size(); i++) {

@@ -3,21 +3,21 @@ package com.dmitryvoronko.sort;
 /**
  * Created by Dmitry on 07/09/2016.
  */
-public final class QuickSort extends Sort{
+public final class QuickSort extends Sort {
 
     public void sort(Comparable[] comparables) {
-        recQuicSort(comparables, 0, comparables.length - 1);
+        recQuickSort(comparables, 0, comparables.length - 1);
     }
 
-    private void recQuicSort(Comparable[] comparables, int left, int right) {
+    private void recQuickSort(Comparable[] comparables, int left, int right) {
         if (right - left <= 0) {
             return;
         } else {
             Comparable pivot = comparables[right];
 
             int partition = partitionIt(comparables, left, right, pivot);
-            recQuicSort(comparables, left, partition - 1);
-            recQuicSort(comparables, partition + 1, right);
+            recQuickSort(comparables, left, partition - 1);
+            recQuickSort(comparables, partition + 1, right);
         }
     }
 
@@ -27,10 +27,9 @@ public final class QuickSort extends Sort{
                             Comparable pivot) {
         int leftPtr = left - 1;
         int rigthPtr = right;
-        while (true)
-        {
-            while (comparables[++leftPtr].compareTo(pivot) < 0);
-            while (rigthPtr > 0 && comparables[--rigthPtr].compareTo(pivot) > 0);
+        while (true) {
+            while (comparables[++leftPtr].compareTo(pivot) < 0) ;
+            while (rigthPtr > 0 && comparables[--rigthPtr].compareTo(pivot) > 0) ;
 
             if (leftPtr >= rigthPtr) {
                 break;

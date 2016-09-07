@@ -6,6 +6,7 @@ package com.dmitryvoronko.sort;
 public abstract class Sort {
 
     public abstract void sort(Comparable[] comparables);
+
     public final void swap(Comparable[] comparables, int one, int two) {
         Comparable temp = comparables[one];
         comparables[one] = comparables[two];

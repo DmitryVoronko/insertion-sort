@@ -1,7 +1,5 @@
 package com.dmitryvoronko.sort;
 
-import java.util.Comparator;
-
 /**
  * Created by Dmitry on 07/09/2016.
  */
@@ -40,7 +38,7 @@ public final class MergeSort extends Sort {
         int n = upperBound - lowerBound + 1;
 
         while (lowPtr <= mid && highPtr <= upperBound) {
-            if (comparables[lowPtr].compareTo(comparables[highPtr]) < 0){
+            if (comparables[lowPtr].compareTo(comparables[highPtr]) < 0) {
                 workComparables[j++] = comparables[lowPtr++];
             } else {
                 workComparables[j++] = comparables[highPtr++];
