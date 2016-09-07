@@ -1,9 +1,6 @@
 package com.dmitryvoronko;
 
-import com.dmitryvoronko.sort.BubbleSort;
-import com.dmitryvoronko.sort.InsertionSort;
-import com.dmitryvoronko.sort.SelectionSort;
-import com.dmitryvoronko.sort.Sort;
+import com.dmitryvoronko.sort.*;
 import com.dmitryvoronko.util.FileManager;
 import com.dmitryvoronko.util.ListManager;
 
@@ -20,7 +17,13 @@ public class App {
     public static void main(String[] args) {
 //        App app = new App();
 //        String[] arguments;
-//        arguments = new String[]{"C:\\Users\\Dmitry\\Documents\\NetBeansProjects\\insertion-sort\\inS.txt", "out.txt", "-s", "-a"};
+//        arguments = new String[]{
+//            "C:\\Users\\Dmitry\\Documents\\NetBeansProjects\\insertion-sort\\inS.txt",
+//                "out.txt",
+//                "-s",
+//                "-d",
+//                "-quick"
+//        };
 //        app.start(arguments);
         start(args);
     }
@@ -53,7 +56,6 @@ public class App {
                     exitWithMessage(INCORRECT_ARGUMENTS);
                     break;
             }
-            System.out.println("RESULT");
             ListManager.displayList(lines, true);
             FileManager.writeLinesToFile(lines, outputFile);
         } else {
@@ -73,9 +75,18 @@ public class App {
             case "-select":
                 sort = new SelectionSort();
                 break;
+            case "-shell":
+                sort = new ShellSort();
+                break;
+            case "-merge":
+                sort = new MergeSort();
+                break;
+            case "-quick":
+                sort = new QuickSort();
+                break;
             default:
                 sort = new InsertionSort();
-
+                break;
         }
         return sort;
     }
@@ -90,9 +101,16 @@ public class App {
                 break;
             case "-i":
                 for (int i = 0; i < lines.size(); i++) {
-                    String stringWithoutSpaces = lines.get(i).replaceAll(" ", "");
-                    String stringWithoutTabs = stringWithoutSpaces.replaceAll("\t", "");
-                    comparables[i] = Integer.valueOf(stringWithoutTabs);
+                    comparables[i] = Integer.valueOf(
+                        getStringWithoutSpaceAndTabs(lines.get(i))
+                    );
+                }
+                break;
+            case "-f":
+                for (int i = 0; i < lines.size(); i++) {
+                    comparables[i] = Float.valueOf(
+                            getStringWithoutSpaceAndTabs(lines.get(i))
+                    );
                 }
                 break;
             default:
@@ -105,6 +123,10 @@ public class App {
     private static void exitWithMessage(String message) {
         System.out.println(message);
         System.exit(0);
+    }
+
+    private static String getStringWithoutSpaceAndTabs(String s) {
+        return  s.replaceAll(" ", "").replaceAll("\t", "");
     }
 
 
