@@ -8,30 +8,38 @@ import java.util.List;
  */
 public class ListManager {
 
-    public static void displayList(List<String> lines, boolean ascending) {
-        if (ascending) {
-            for (int i = 0; i < lines.size(); i++) {
-                System.out.println(lines.get(i));
-            }
-        } else {
-            for (int i = lines.size() - 1; i >= 0; i--) {
-                System.out.println(lines.get(i));
-            }
-        }
+    private static final String ASCENDING = "-a", DESCENDING = "-d";
+
+    public static void displayList(List<String> lines) {
+        for (String line : lines)
+            System.out.println(line);
     }
 
-    public static List<String> packComparablesToList(Comparable[] comparables, boolean ascending) {
+    public static List<String> getListFormComparables(Comparable[] comparables, boolean ascending) {
         List<String> list = new ArrayList<String>();
-        if (ascending) {
-            for (int i = 0; i < comparables.length; i++) {
+        if (ascending)
+            for (Comparable comparable : comparables)
+                list.add(String.valueOf(comparable));
+        else
+            for (int i = comparables.length - 1; i >= 0; i--)
                 list.add(String.valueOf(comparables[i]));
-            }
-        } else {
-            for (int i = comparables.length - 1; i >= 0; i--) {
-                list.add(String.valueOf(comparables[i]));
-            }
-        }
         return list;
+    }
+
+    public static List<String> getStrings(String ascending, Comparable[] comparables) {
+        List<String> lines;
+        switch (ascending) {
+            case ASCENDING:
+                lines = ListManager.getListFormComparables(comparables, true);
+                break;
+            case DESCENDING:
+                lines = ListManager.getListFormComparables(comparables, false);
+                break;
+            default:
+                lines = ListManager.getListFormComparables(comparables, true);
+                break;
+        }
+        return lines;
     }
 
 }

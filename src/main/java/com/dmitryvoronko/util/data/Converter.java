@@ -1,4 +1,4 @@
-package com.dmitryvoronko.data;
+package com.dmitryvoronko.util.data;
 
 import java.util.List;
 

@@ -27,7 +27,6 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="insertion-sort" target="1.8" />
       <module name="sort" target="1.8" />
     </bytecodeTargetLevel>
   </component>

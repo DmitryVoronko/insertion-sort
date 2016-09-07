@@ -1,4 +1,4 @@
-package com.dmitryvoronko.data;
+package com.dmitryvoronko.util.data;
 
 import java.util.List;
 
@@ -16,7 +16,7 @@ public class ComparableConverter {
     public ComparableConverter(String dataType, List<String> lines) {
         switch (dataType) {
             case STRING:
-                converter = new FloatConverter(lines);
+                converter = new StringConverter(lines);
                 break;
             case INTEGER:
                 converter = new IntegerConverter(lines);
@@ -30,8 +30,9 @@ public class ComparableConverter {
         }
     }
 
-    public Comparable[] convert(){
+    public Comparable[] convert() {
         return converter.convert();
     }
+
 
 }

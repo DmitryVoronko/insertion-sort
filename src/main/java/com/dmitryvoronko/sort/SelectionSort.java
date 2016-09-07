@@ -11,7 +11,7 @@ public final class SelectionSort extends Sort {
         for (out = 0; out < comparables.length; out++) {
             min = out;
             for (in = out + 1; in < comparables.length; in++) {
-                if (comparables[in].compareTo(min) < 0) {
+                if (comparables[in].compareTo(comparables[min]) < 0) {
                     min = in;
                 }
             }
