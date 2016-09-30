@@ -1,5 +1,5 @@
 # sort
-
+[![Build Status](https://drone.io/github.com/DmitryVoronko/insertion-sort/status.png)](https://drone.io/github.com/DmitryVoronko/insertion-sort/latest)
 # Описание
 
 ## Систеные требования:
